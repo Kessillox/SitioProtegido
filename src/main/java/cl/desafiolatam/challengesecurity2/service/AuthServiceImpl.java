@@ -16,15 +16,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class AuthServiceImpl implements UserDetailsService {
+public class AuthServiceImpl implements UserDetailsService {//implementa la interfaz UserDetailsService. Ésta es la Interfaz central para cargar los datos específicos del usuario Se utiliza en todo el marco como acceso a datos del usuario y es una estrategia ampliamente utilizada en el mundo de Spring.
+
 
     @Autowired
-    private UserMapper userMapper;
+    private UserMapper userMapper;//Se inyecta el mapper de MyBatis creado anteriormente.
 
     @Autowired
-    private BCryptPasswordEncoder encoder;
+    private BCryptPasswordEncoder encoder;//Se inyecta el encoder para proteger las contraseñas.
 
     @Override
+    /*En esta implementación propia, se hace la búsqueda en el mapper y se validan las credenciales.
+     En caso de no coincidir, se retorna un UsernameNotFoundException, de lo contrario, se siguecon 
+     el flujo y se retorna un nuevo objeto con las credenciales correspondientes para ser
+    usadas en la configuración de seguridad.*/
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Users users = userMapper.findByEmail(email);
         if (users == null) throw new UsernameNotFoundException(email);

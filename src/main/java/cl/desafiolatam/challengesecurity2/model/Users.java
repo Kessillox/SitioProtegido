@@ -11,7 +11,8 @@ import java.io.Serializable;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Users implements Serializable {
+public class Users implements Serializable {//La clase Users, contiene datos básicos del usuario, además implementa Serializable, lo que se utilizará en los pasos posteriores por MyBatis
+
 
     private String email;
     private String password;
