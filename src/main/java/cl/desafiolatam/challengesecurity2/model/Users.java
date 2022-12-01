@@ -7,11 +7,7 @@ import lombok.Setter;
 
 import java.io.Serializable;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-public class Users implements Serializable {//La clase Users, contiene datos básicos del usuario, además implementa Serializable, lo que se utilizará en los pasos posteriores por MyBatis
+public class Users{//La clase Users, contiene datos básicos del usuario, además implementa Serializable, lo que se utilizará en los pasos posteriores por MyBatis
 
 
     private String email;

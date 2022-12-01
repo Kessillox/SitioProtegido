@@ -15,8 +15,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
-public class AuthServiceImpl implements UserDetailsService {//implementa la interfaz UserDetailsService. Ésta es la Interfaz central para cargar los datos específicos del usuario Se utiliza en todo el marco como acceso a datos del usuario y es una estrategia ampliamente utilizada en el mundo de Spring.
+public class AuthServiceImpl {//implementa la interfaz UserDetailsService. Ésta es la Interfaz central para cargar los datos específicos del usuario Se utiliza en todo el marco como acceso a datos del usuario y es una estrategia ampliamente utilizada en el mundo de Spring.
 
 
     @Autowired
@@ -31,9 +30,9 @@ public class AuthServiceImpl implements UserDetailsService {//implementa la inte
      el flujo y se retorna un nuevo objeto con las credenciales correspondientes para ser
     usadas en la configuración de seguridad.*/
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        Users users = userMapper.findByEmail(email);
+        Users users = null;
         if (users == null) throw new UsernameNotFoundException(email);
-        List<GrantedAuthority> authorities = new ArrayList<>();
+        List<> authorities = new ArrayList<>();
         authorities.add(new SimpleGrantedAuthority(users.getRole().toString()));
         return new User(users.getEmail(),
                 users.getPassword(),
