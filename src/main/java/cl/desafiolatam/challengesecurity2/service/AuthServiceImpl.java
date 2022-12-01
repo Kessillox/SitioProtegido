@@ -33,10 +33,8 @@ public class AuthServiceImpl {//implementa la interfaz UserDetailsService. Ésta
         Users users = null;
         if (users == null) throw new UsernameNotFoundException(email);
         List<> authorities = new ArrayList<>();
-        authorities.add(new SimpleGrantedAuthority(users.getRole().toString()));
-        return new User(users.getEmail(),
-                users.getPassword(),
-                authorities);
+        authorities.add(new SimpleGrantedAuthority();
+   
     }
 
 }

@@ -7,8 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class ClientController {
 	//Modelo y vista de cliente, metodo GET.
     public ModelAndView home() {
-        ModelAndView modelAndView = new ModelAndView()
-        return modelAndView;
+
     }
 
 }

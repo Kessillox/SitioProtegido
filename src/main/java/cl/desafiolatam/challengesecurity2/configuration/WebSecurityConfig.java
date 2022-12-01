@@ -10,19 +10,15 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {//Inicio de la clase WebSecurityConfig que extiende (hereda) laClase WebSecurityAdapter
+public class WebSecurityConfig{//Inicio de la clase WebSecurityConfig que extiende (hereda) laClase WebSecurityAdapter
 
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception { //Metodo configure que crea dos usuarios  a traves del objeto de gestion de autenticacion
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
     }
 
-    @Override
     public void configure(HttpSecurity http) throws Exception { //Define accesos y páginas para cada rol. También una pagina de acceso denegado.
         http.csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/login").permitAll()
-                .and()
                 .formLogin()
                 .loginPage("/login")
                 .usernameParameter("email")
