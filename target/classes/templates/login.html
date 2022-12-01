@@ -9,30 +9,32 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-
+<!--Página de Login-->
 <div class="container">
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-4"><!--Esto representa un tercio de las columnas de una fila-->
         </div>
-        <div class="col-sm-4">
-            <form th:action="@{/login}" method="post" class="form-signin">
-                <h3 class="form-signin-heading" th:text="Credenciales"></h3>
-                <br/>
+        <div class="col-sm-4"><!--Esto representa un tercio de las columnas de una fila-->
+            <form th:action="@{/login}" method="post" class="form-signin"> <!--Formulario tipo POST, en login-->
+                <h3 class="form-signin-heading" th:text="Credenciales"></h3> <!--Texto-->
+                <br/><!--Espacio-->
                 <input type="text" id="email" name="email" th:placeholder="Email"
-                       class="form-control"/> <br/>
+                       class="form-control"/> <!--Entrada tipo texto de email--> 
+                 <br/>
                 <input type="password" th:placeholder="Password"
-                       id="password" name="password" class="form-control"/> <br/>
+                       id="password" name="password" class="form-control"/><!--Entrada de tipo contraseña de la contraseña-->
+                 <br/>
 
                 <div align="center" th:if="${param.error}">
-                    <p style="font-size: 20; color: #FF1C19;">Verifica las credenciales.</p>
+                    <p style="font-size: 20; color: #FF1C19;">Verifica las credenciales.</p> <!--Texto gatillado por la verificaion de credenciales-->
                 </div>
                 <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit"
-                        th:text="Login">
+                        th:text="Login"> <!--Botón Login-->
                 </button>
             </form>
 
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4"><!--Esto representa un tercio de las columnas de una fila-->
         </div>
     </div>
 </div>

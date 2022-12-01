@@ -6,7 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class AdminController {
-
+	//Modelo y vista de admin, metodo GET.
     @GetMapping("/admin")
     public ModelAndView home() {
         ModelAndView modelAndView = new ModelAndView("admin");

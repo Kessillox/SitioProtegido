@@ -6,7 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ClientController {
-
+	//Modelo y vista de cliente, metodo GET.
     @GetMapping("/client")
     public ModelAndView home() {
         ModelAndView modelAndView = new ModelAndView("client");
